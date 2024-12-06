@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .search-bar {
+            width: 300px;
+        }
+        .login-btn {
+            margin-right: 10px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./products.html" target="_blank">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./aboutus.html" target="_blank">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contactus.html" target="_blank">Contact Us</a>
+                    </li>
+                </ul>
+                <input type="text" class="form-control search-bar me-2" placeholder="Search for products...">
+                <button class="btn btn-primary login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</button>
+            </div>
+        </div>
+
+
+    </nav>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-links">
+
+            <a href="https://whatsapp.com/dl/" target="_blank">
+                <img src="data:image/png;base64,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
+" alt="WhatsApp Logo" class="icon"> WhatsApp
+            </a><br><br>
+
+            <a href="https://www.facebook.com/profile.php?id=100080166548740" target="_blank">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAYAAACPZlfNAAAAAXNSR0IArs4c6QAAA+NJREFUeF7tnU1y1DAQhZ9njjHZcgVmC0cAtlwBtnAE2MIV2IYrwDZcgS05RjyUnJnKFMSJutVypPLnTSoV/fS8T09S2rJnEFdXCgxdRUuwAlhngwBgAOtMgc7CxWEA60yBzsLFYQDrTIHOwsVhAOtMgc7CxWEA60yBzsKNcNhO2rzp7HM/QbjDH+nmWtJVSeeFwDbvJb0rCWCFdb9K4xfv5y4Atvkmae/teOX1LqXxo0cDL7A0Df70dEidkwLjW8/06AS2fS0dPiN+kQKuqdEJjLWrCNVtZYAFiLhkEwBbUu2AvgAWIOKSTQBsSbUD+gJYgIhLNgGwJdUO6AtgASKeNZFyf+k6pPyfpGF3/P0iqB+AFQqZkrK/pDH9zEnQHgFOvV5IU6rOcgHMotZZ2STcpaSjk5ytaPPbWBNgNsGm2x0pn1cI6tQrwGz620q7s+Xz3QDMhiC/9JU0ZcqDL4AFCzo1VwlWahpgFYCNL+LWrH/DA1g0sArr1nmIAAsGVtNdTInBsFTZXQCLBub6J9UWBFOiTa8HS/sOvNw2OR2HSNfzu3zifZ0drDlG1yBayZmO8ZmDfjoZlg4a1TrKB7B5KB5g1c9dAux+YFPO8KXRYXtH9t3YBaem5gRzZDcWOXeJw2aIOYAtcu4SYIHAPkmq/UQOwAA2u4wuMmVYF/HANWyDw6LUd7TjWcMA5hA6qgrAjumaXp68BBjAQsy/tl3i6aDnY+IdksOMj6emTdXw6rGW7/5uTvymqmsDVpKBz0eRV9K1awZYnrg1Srn+DQBYDRR5bW5/SOZpEWB54tYoBbAMVZtaw6zn6tl0ZBCuVcT7zhKmxFpEHm7Xfe8MYABrOlvfyhrm2tKzhj2Nu1KvAMvUvhWHubb0OCyTcoViAMsUNTv5e21/gM+S/DVnOE6fb227xEyurof43OtSdlArzNZna8MNTG5gZg+WhwoyJc6og8NwGA4LUQCHNZ2aymbMlMiUmD1Y2HQ4pMJhOMwxbP6vwraeTQebjhArzTSCw3AYDsNhNRXAYTis5vhiDcNhOAyH1VQAh+GwmuOLNQyH4TAcVlMBHIbDao4v1jAchsNwWE0F+nLY8EG6+W7Vw/mS5vTiYvMXnFljiyrf6BEB3xcfeIGVPBcVBSK3nRaBub/4oACY0sPY6a2drb8krDVgblhphJYAO43wnbTdO14skuuQwnLTW7Wta0Wa8iu8r778qxsjgBUKSnWLAgCzqNVAWYA1AMESAsAsajVQFmANQLCEADCLWg2UBVgDECwhAMyiVgNlAdYABEsIALOo1UBZgDUAwRICwCxqNVAWYA1AsITwF/+n3HwaLYMLAAAAAElFTkSuQmCC" alt="Facebook Logo" class="icon"> Facebook
+            </a><br><br>
+
+            <a href="https://discord.com/invite/MGuSwBcv" target="_blank">
+                <img src="data:image/png;base64,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
+" alt="Discord Logo" class="icon"> Discord
+            </a><br><br>
+
+        </div>
+    </section>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function checkLoginStatus() {
+            const loggedIn = false; // Simulate login status (update logic as needed)
+
+            if (!loggedIn) {
+                const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+                loginModal.show();
+            } else {
+                alert('Proceeding to checkout!');
+            }
+        }
+    </script>
+</body>
+</html>
